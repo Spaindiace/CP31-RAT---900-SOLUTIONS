@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
+ 
+void solve(){
+  
+ 
+ int n,m,i,j;
+ cin>>n>>m>>i>>j;
+ 
+   cout<<1<<" "<<m<<" "<<n<<" "<<1<<endl;
+ 
+ 
+ 
+ 
+ 
+ 
+}
+ 
+signed main() {
+  
+   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+   {
+      
+      solve ();
+    }
+    return 0;
+} 
