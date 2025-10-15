@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
+ 
+void solve(){
+  
+  int n;
+  cin>>n;
+  
+  vector<int>a(n);
+  for(auto&k:a){
+    cin>>k;
+  }
+  int l=0;
+  int count=0;
+  
+  for(auto&k:a){ if(k==1) k++;}
+  while(l<n-1){
+   
+    if(a[l+1]%a[l]==0){
+     
+      
+      a[l+1]=a[l+1]+1;
+      l++;
+      count++;
+      
+    }
+    else{
+      l++;
+    }
+  }
+  for(auto&k:a){
+    cout<<k<<" ";
+    
+  }
+  cout<<endl;
+  
+}
+ 
+signed main() {
+  
+   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+   {
+      
+      solve ();
+    }
+    return 0;
+} 
