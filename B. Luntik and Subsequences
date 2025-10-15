@@ -1,0 +1,82 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
+ 
+void solve(){
+  
+int n;
+cin>>n;
+ll sum=0;
+std::vector<int>a(n) ;
+for(auto&k:a){
+ 
+  cin>>k;
+  sum+=k;
+}
+
+ll ned=sum-1;
+
+map<int,int>fo;
+for(auto&k:a){
+  fo[k]++;
+}
+int count1=0;
+int count0=0;
+for(auto&k:fo){
+  if(k.first==1){
+    count1+=k.second;
+  }
+  else if(k.first==0){
+    count0+=k.second;
+  }
+  
+}
+if(count1==0){
+  cout<<0<<endl;
+  return;
+}
+vector<int>zeo;
+for(auto&k:a){
+   
+   zeo.push_back(k);
+   
+ }
+ vector<int>str;
+ for(auto&k:a){
+   if(k!=0){
+   str.push_back(k);
+   }
+ }
+ sort(zeo.begin(),zeo.end());
+ zeo.pop_back();
+ int edge=accumulate(zeo.begin(),zeo.end(),0);
+ //if(edge==0){
+   //cout<<2<<endl;
+   //return;
+ //}
+ 
+ int count=1;
+ 
+ ll res=(ll)count1*(1LL<<count0);
+  
+  cout<<res<<endl;
+  
+  
+
+        
+}
+ 
+signed main() {
+  
+   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+   {
+      
+      solve ();
+    }
+    return 0;
+} 
