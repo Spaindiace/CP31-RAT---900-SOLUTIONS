@@ -1,0 +1,68 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
+ 
+void solve(){
+  
+  int n,q;
+  cin>>n>>q;
+ ll  temp=0;
+  vector<int>a(n);
+  for(auto&p:a){
+    cin>>p;
+    temp+=p;
+  }
+  
+  vector<ll>pre(n+1,0);
+  for(int i=0; i<n; i++){
+    pre[i+1]=pre[i]+a[i];
+  }
+  vector<vector<int>>vv(q,vector<int>(3));
+  
+  for(int i=0; i<q; i++){
+    
+    ll l,r,k;
+    cin>>l>>r>>k;
+    vv[i][0]=l-1;
+    vv[i][1]=r-1;
+    vv[i][2]=k;
+    
+  }
+  
+  for(int i=0; i<q; i++){
+    ll sum=temp;
+    ll l=vv[i][0];
+ll r=vv[i][1];
+ll cop=vv[i][2];
+   
+    ll prep=pre[r+1]-pre[l];
+   ll len=(r-l)+1;
+   sum=sum-prep+cop*len;
+    if(sum%2!=0){
+      cout<<"YES"<<endl;
+      
+    }
+    else{
+      cout<<"NO"<<endl;
+    }
+    sum=temp;
+  }
+  
+  
+  
+}
+ 
+signed main() {
+  
+   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+   {
+      
+      solve ();
+    }
+    return 0;
+} 
