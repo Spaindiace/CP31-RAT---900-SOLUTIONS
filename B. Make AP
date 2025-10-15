@@ -1,0 +1,87 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+using lb = long double;
+using i128 = __int128;
+#define via vector<int>a(n); for(int i=0;i<n;i++) cin>>a[i];
+#pragma GCC optimize("Ofast")
+#define MOD 998244353
+#define all(x) x.begin(), x.end()
+#define rall(x) rbegin(x), rend(x)
+#define rv(x)  x.begin(), x.end()
+#define sz(x) int(size(x))
+#define pb push_back
+#define eb emplace_back
+#define bk back()
+
+int bs(vector<int>&a,int x){
+    int l=0,r=a.size()-1;
+    while(l<=r){
+        int m=(l+r)/2;
+        if(a[m]==x) return m;
+        if(a[m]<x) l=m+1;
+        else r=m-1;
+    }
+    return -1;
+}
+
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int f(int x,ll sume){
+    while(x>0){
+        int res=x%10;
+        sume+=res;
+        x/=10;
+    }
+    return sume;
+}
+
+void solve(){
+  
+          
+              ll a,b,c;
+               cin>>a>>b>>c;
+               
+                    ll tb=(a+c)/2*b;
+                    ll ta=(2*b-c)/a;
+                    ll tc=(2*b-a)/c;
+                    
+                     if((a+c)%(2*b)==0){
+                           cout<<"YES"<<endl;
+                             return;
+                     }
+                     else if((2*b-c)>0&&(2*b-c)%(a)==0){
+                           cout<<"YES"<<endl;
+                             return;
+                     }
+                      else if((2*b-a)>0&&(2*b-a)%(c)==0){
+                           cout<<"YES"<<endl;
+                             return;
+                      }
+                      else {
+                          cout<<"NO"<<endl;
+                           return;
+                      }
+                      
+                      
+                     
+                      
+                      
+          
+          
+    
+}
+
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int t;
+    cin>>t;
+    while(t--) 
+    {
+        solve();
+    }
+    return 0;
+}
