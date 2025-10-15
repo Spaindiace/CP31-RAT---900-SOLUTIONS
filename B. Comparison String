@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
+ 
+void solve(){
+  
+  int n;
+  cin>>n;
+  string s;
+  cin>>s;
+  vector<int>str;
+ int ans=1; int curr=1;
+ for(int i=1; i<n; i++){
+   if(s[i]!=s[i-1]){
+      curr=1;
+   }
+   else{
+     curr++;
+   }
+   ans=max(ans,curr);
+ }
+cout<<ans+1<<endl;
+}
+ 
+signed main() {
+  
+   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+   {
+      
+      solve ();
+    }
+    return 0;
+} 
