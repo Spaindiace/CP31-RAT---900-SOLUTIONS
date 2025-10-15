@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
+
+bool ispow(ll n){
+  
+  if(n<=0) return false;
+  ll logval=log2(n);
+  if(pow(2,logval)==n){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+ 
+void solve(){
+
+
+ll n;
+cin>>n;
+
+if(ispow(n)){
+  cout<<"NO"<<endl;
+}
+ else {
+   cout<<"YES"<<endl;
+ }
+   
+ 
+        
+}
+ 
+signed main() {
+  
+   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+   {
+      
+      solve ();
+    }
+    return 0;
+} 
